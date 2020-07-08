@@ -1,8 +1,24 @@
+
 import React from 'react';
-import Todo from './Todo'
+import Todo from './Event'
 
-//render todos in table
+const TodosContainer = (props) => {
+    let todoCards = props.todosArray.map((todoPOJO) => {
+        return (
+            <Todo
+                key={todoPOJO.id}
+                todo={todoPOJO}
+            />
+        );
+    });
 
-// render filtered events
+    return (
+        <ul className="cards">
+            {todoCards}
+        </ul>
+    );
+};
 
-export default EventsContainer;
+// render todos into list/table with dates and checkbox rather than on card
+
+export default TodosContainer;

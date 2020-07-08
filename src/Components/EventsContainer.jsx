@@ -18,6 +18,6 @@ const EventsContainer = (props) => {
     );
 };
 
-// render filtered events
+// render filtered events here
 
 export default EventsContainer;

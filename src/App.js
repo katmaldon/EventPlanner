@@ -11,30 +11,45 @@ import Search from './Components/Search'
 class App extends React.Component {
     state = {
         eventsArray: [],
+        todosArray: []
     };
 
     componentDidMount() {
-        fetch('http://localhost:3000/events') // change port?
-            .then((r) => r.json())
-            .then((events) => {
+        Promise.all([fetch('http://localhost:3000/events'), fetch('http://localhost:3000/todos')]) // change ports
+            .then(([r1, r2]) => {
+                return Promise.all([r1.json(), r2.json()])
+            })
+            .then(([events, todos]) => {
+                // console.log(todos)
                 this.setState({
                     eventsArray: events,
+                    todosArray: todos
                 });
             });
     }
+
 
     returnEventsArray = () => {
         let events = this.state.eventsArray;
         return events;
     };
 
+
+    returnTodosArray = () => {
+        let todos = this.state.todosArray;
+        return todos;
+    };
+
     render() {
         let eventsArray = this.returnEventsArray();
+        let todosArray = this.returnTodosArray();
         return (
             <div>
                 <Header />
                 <UsersContainer />
-                <TodosContainer />
+                <TodosContainer
+                    todosArray={todosArray}
+                />
                 <Search />
                 <EventsContainer
                     eventsArray={eventsArray}
@@ -42,7 +57,6 @@ class App extends React.Component {
             </div>
         );
     }
-
 }
 
 export default App;
