@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './Components/Header'
+import UsersContainer from './Components/UsersContainer'
+import TodosContainer from './Components/TodosContainer'
+import EventsContainer from './Components/EventsContainer'
+import Search from './Components/Search'
+
+class App extends React.Component {
+    state = {
+        eventsArray: [],
+    };
+
+    componentDidMount() {
+        fetch('http://localhost:3000/events') // change port?
+            .then((r) => r.json())
+            .then((events) => {
+                this.setState({
+                    eventsArray: events,
+                });
+            });
+    }
+
+    returnEventsArray = () => {
+        let events = this.state.eventsArray;
+        return events;
+    };
+
+    render() {
+        let eventsArray = this.returnEventsArray();
+        return (
+            <div>
+                <Header />
+                <UsersContainer />
+                <TodosContainer />
+                <Search />
+                <EventsContainer
+                    eventsArray={eventsArray}
+                />
+            </div>
+        );
+    }
+
 }
 
 export default App;
