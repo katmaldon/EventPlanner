@@ -11,7 +11,8 @@ import Search from './Components/Search'
 class App extends React.Component {
     state = {
         eventsArray: [],
-        todosArray: []
+        todosArray: [],
+        user: {name: "Kat", age: 35, image_url: "", bio: "The Crone"}
     };
 
     componentDidMount() {
@@ -46,7 +47,9 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <UsersContainer />
+                <UsersContainer
+                    user={this.state.user}
+                />
                 <TodosContainer
                     todosArray={todosArray}
                 />
