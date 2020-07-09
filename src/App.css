@@ -2,10 +2,9 @@
   text-align: center;
 }
 
-
 .Header {
   background-color: white;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +13,92 @@
   color: magenta;
 }
 
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: green;
+    border: 2px solid #4CAF50;
+  }
+
+
+.body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: magenta;
+}
+
+h2 {
+  color: rgb(12, 148, 182);
+  margin-left: 0px;
+}
+
+h3 {
+  color: rgb(196, 17, 91);
+  margin-left: 0px;
+}
+
+p {
+  color: rgb(199, 0, 139);
+  margin-left: 0px;
+}
+
+h1.user_card {
+  text-align: center;
+  color: rgb(7, 67, 95);
+  text-shadow: 1px 2px #6fa0b8;
+  justify-content: center;
+}
+
+.event_cards {
+  display: grid;
+  margin: 0px;
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+}
+
+.todo_cards {
+    display: grid;
+    margin: 0px;
+    grid-gap: 5px;
+    grid-template-columns: auto;
+}
+
+.search {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 2rem;
+}
+
+.searchWord {
+  text-align: center;
+  width: 100%;
+  border: 3px solid #ff1e00;
+  padding: 5px;
+  height: 3rem;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.card {
+  text-align: center;
+  color: rgb(7, 67, 95);
+}
+
+.card_title {
+  text-align: center;
+  color: rgb(7, 67, 95);
+  text-shadow: 1px 2px #8ac8e7;
+}
+
 .App-link {
   color: #61dafb;
 }
-

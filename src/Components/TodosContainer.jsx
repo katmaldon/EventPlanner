@@ -3,7 +3,7 @@ import React from 'react';
 import Todo from './Event'
 
 const TodosContainer = (props) => {
-    let todoCards = props.todosArray.map((todoPOJO) => {
+    let todoCardsArr = props.todos.map((todoPOJO) => {
         return (
             <Todo
                 key={todoPOJO.id}
@@ -13,8 +13,8 @@ const TodosContainer = (props) => {
     });
 
     return (
-        <ul className="cards">
-            {todoCards}
+        <ul className="todo_cards">
+            {todoCardsArr}
         </ul>
     );
 };

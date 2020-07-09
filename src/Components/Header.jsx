@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <div>
-    <img src="https://openlab.citytech.cuny.edu/mcarrillo-eportfolio/files/2015/10/Events-Banner.jpg" alt="EventPlanner" id="main-header"/>
+    <img src="https://i.imgur.com/d3FL39D.jpg" alt="EventPlanner" id="header"/>
   </div>
 );
 

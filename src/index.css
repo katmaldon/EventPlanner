@@ -1,7 +1,8 @@
 body {
-  padding: 50px;
-  background-color: #66ccff;
+  padding: 20px;
+  background-color: white;
   font-family: sans-serif;
+  justify-content: center;
 }
 #user_container {
     display: flex;

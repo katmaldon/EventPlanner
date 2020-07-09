@@ -2,25 +2,25 @@ import React from 'react';
 
 class Event extends React.Component {
 
-    state = {
-        ticket: true, // toggle ticket on event?
-    };
 
     // handleClick for toggle
 
+    //console.log(this.props.Event)
     render() {
         return (
             <li className="cards_item">
                 <div className="card">
-                    <img src={this.props.Event.picture_url} alt={this.props.Event.name} className="card_image" />
+                    <div className="card_title"><h3>{this.props.event.name}</h3></div>
+                    <img src={this.props.event.image_url} alt={this.props.event.name} className="card_image" />
                     <div className="card_content">
-                        <div className="card_title">{this.props.Event.name}</div>
                         <div className="card_detail">
-                            <p>{this.props.Event.event_type}</p>
-                            <p>{this.props.Event.event_url}</p>
+                            <h4>Type of event: {this.props.event.event_type}</h4>
+                            <p>Date & time: {this.props.event.date}, {this.props.event.time}</p>
+                            <p>Event details: <a href={this.props.event.event_url}>{this.props.event.event_url}</a></p>
                         </div>
                     </div>
                 </div>
+                <br></br>
             </li>
         );
     }

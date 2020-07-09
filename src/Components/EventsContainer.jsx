@@ -2,7 +2,7 @@ import React from 'react';
 import Event from './Event'
 
 const EventsContainer = (props) => {
-    let eventCards = props.eventsArray.map((eventPOJO) => {
+    let eventCardsArr = props.events.map((eventPOJO) => {
         return (
             <Event
                 key={eventPOJO.id}
@@ -12,12 +12,12 @@ const EventsContainer = (props) => {
     });
 
     return (
-        <ul className="cards">
-            {eventCards}
+        <ul className="event_cards">
+            {eventCardsArr}
         </ul>
     );
 };
 
-// render filtered events here
+// render events here
 
 export default EventsContainer;
